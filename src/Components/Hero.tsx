@@ -1,11 +1,18 @@
 const Hero = () => {
+    const headline = 'Fresh Dairy, Straight from the Farm'
+    const ctaText = 'Request an order'
+
     return (
-        <div className="h-[500px] flex items-center text-center">
-            <div className="">
-                <h1>Fresh Dairy, Straight from the Farm</h1>
-                <button className="mt-7">Request an order</button>
+        <section className="h-screen w-screen flex items-center justify-center">
+            <div className="absolute inset-0 bg-[url(hero2.jpg)] bg-no-repeat bg-cover bg-center">
+                <div className="absolute inset-0 bg-black/40"/>
             </div>
-        </div>
+            <div className="items-center text-center margin-auto z-2">
+                <h1>{headline}</h1>
+                <button className="mt-7">{ctaText}</button>
+            </div>
+        </section>
+
     )
 }
 
