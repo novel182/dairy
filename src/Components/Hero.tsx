@@ -3,7 +3,7 @@ const Hero = () => {
     const ctaText = 'Request an order'
 
     return (
-        <section className="h-screen w-screen flex items-center justify-center">
+        <section className="h-screen flex items-center justify-center">
             <div className="absolute inset-0 bg-[url(hero2.jpg)] bg-no-repeat bg-cover bg-center">
                 <div className="absolute inset-0 bg-black/40"/>
             </div>
