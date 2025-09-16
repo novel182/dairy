@@ -2,6 +2,7 @@ import Hero from "./Hero"
 import InfoSection from "./InfoSection"
 import NewsLetter from "./NewsLetter"
 import ProductShowcase from "./ProductShowcase"
+import Footer from "./Footer"
 
 const Container = () => {
     return (
@@ -11,6 +12,7 @@ const Container = () => {
                 <InfoSection />
                 <ProductShowcase />
                 <NewsLetter />
+                <Footer />
             </div>
         </>
     )
