@@ -8,7 +8,7 @@ const InfoSection = () => {
                 <h2 className="text-4xl text-balance">{header}</h2>
                 <p className="mt-4 text-balance text-xl">{description}</p>
             </div>
-            <img className="max-w-[500px] shadow-lg rounded-lg" src="placeholder.jpg"/>
+            <img className="max-w-[500px] w-full h-auto shadow-lg rounded-lg" src="placeholder.jpg"/>
         </section>
     )
 }
