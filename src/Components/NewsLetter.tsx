@@ -5,7 +5,7 @@ const NewsLetter = () => {
         autoComplete="off"
         className="bg-white border border-white focus:border-[0] focus:outline-0 p-3 rounded-lg m-4 min-w-[400px] h-[35px] text-gray-600"
         type="text"
-        value="Enter your email address"/>
+        placeholder="Enter your email address"/>
 
     const submitButton = <button className="h-[37px] text-white flex items-center"> Subscribe</button>
 
