@@ -8,12 +8,10 @@ const Container = () => {
     return (
         <>
             <Hero />
-            <div className="text-gray-900">
-                <InfoSection />
-                <ProductShowcase />
-                <NewsLetter />
-                <Footer />
-            </div>
+            <InfoSection />
+            <ProductShowcase />
+            <NewsLetter />
+            <Footer />
         </>
     )
 }

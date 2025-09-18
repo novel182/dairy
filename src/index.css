@@ -6,7 +6,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: oklch(21% 0.034 264.665);
   background-color: #fdfff2;
 
   font-synthesis: none;
