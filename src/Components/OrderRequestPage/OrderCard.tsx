@@ -12,10 +12,10 @@ const buttonStyle = {
     border: "1px solid oklch(0 0 252/0.2)"
 }
 
-const OrderCard = ({title, img, desc, price}: OrderCardProps) => {
+const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price}) => {
     const [quantity, setQuantity] = useState(0)
 
-    const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const onInputChange : Function = (event: React.ChangeEvent<HTMLInputElement>) => {
         var val = parseInt(event.target.value)
 
         if(isNaN(val) || val<0) val = 0
