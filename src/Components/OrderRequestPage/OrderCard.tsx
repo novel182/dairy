@@ -15,7 +15,7 @@ const buttonStyle = {
 const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price}) => {
     const [quantity, setQuantity] = useState(0)
 
-    const onInputChange : Function = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) : void => {
         var val = parseInt(event.target.value)
 
         if(isNaN(val) || val<0) val = 0

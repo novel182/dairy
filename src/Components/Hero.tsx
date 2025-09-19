@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-const Hero = () => {
+const Hero : React.FC = () => {
     const headline = 'Freshness from Farm to Dairy'
     const ctaText = 'Request an order'
 

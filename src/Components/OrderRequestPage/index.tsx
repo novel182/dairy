@@ -6,7 +6,7 @@ const OrderCardInfo = {
     price: "4.99/cup"
 }
 
-const OrderRequestPage = () => {
+const OrderRequestPage : React.FC = () => {
     return (
         <div className="">
             <OrderCard {...OrderCardInfo}/>

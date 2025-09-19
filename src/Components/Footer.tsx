@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer : React.FC = () => {
     return (
         <section className="my-15 items-center">
             <div className="m-auto flex justify-between w-[60%]">

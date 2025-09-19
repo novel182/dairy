@@ -7,7 +7,7 @@ const cardInfo = {
 
 const cards = Array(6).fill(cardInfo)
 
-const ProductShowcase = () => {
+const ProductShowcase : React.FC = () => {
     const sectionHeader = 'Our Premium Products'
     const desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut" 
 

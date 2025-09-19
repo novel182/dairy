@@ -4,7 +4,7 @@ import NewsLetter from "./NewsLetter"
 import ProductShowcase from "./ProductShowcase"
 import Footer from "./Footer"
 
-const Container = () => {
+const Container : React.FC = () => {
     return (
         <>
             <Hero />

@@ -1,7 +1,7 @@
-const NewsLetter = () => {
+const NewsLetter : React.FC = () => {
     var inputBoxValue = ""
 
-    const submitOnClick = () => {
+    const submitOnClick = () : void => {
         console.log(inputBoxValue)
     }
 
