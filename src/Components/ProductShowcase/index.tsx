@@ -1,6 +1,7 @@
 import ProductCard from "./ProductCard"
+import type { ProductCardProps } from "./ProductCard"
 
-const cardInfo = {
+const cardInfo : ProductCardProps = {
     title: 'Placeholders',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
 }
@@ -16,8 +17,8 @@ const ProductShowcase : React.FC = () => {
             <h1 className="mt-10">{sectionHeader}</h1>
             <p className="mt-3 mb-10">{desc}</p>
             <div className="mt-2 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {cards.map(({title, description}) => 
-                    <ProductCard title={title} description={description}/>
+                {cards.map((info, index) => 
+                    <ProductCard key={`showcaseProduct${index}`} {...info}/>
                 )}
             </div>
         </section>

@@ -1,15 +1,15 @@
-import OrderCard from "./OrderCard"
-
-const OrderCardInfo = {
-    title: "Butter",
-    desc: "Freshly churned butter made from high-quality cream",
-    price: "4.99/cup"
-}
+// import Header from "./Header"
+import QuickCheckout from "./QuickCheckout"
+import SelectionSection from "./SelectionSection"
 
 const OrderRequestPage : React.FC = () => {
     return (
-        <div className="">
-            <OrderCard {...OrderCardInfo}/>
+        <div className="flex items-center w-[80%] m-4">
+            <div className="m-auto">
+                {/* <Header /> */}
+                <SelectionSection />
+            </div>
+            <QuickCheckout />
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
+import { primary } from "utils/colors"
+
 const Hero : React.FC = () => {
     const headline = 'Freshness from Farm to Dairy'
     const ctaText = 'Request an order'
@@ -13,7 +15,10 @@ const Hero : React.FC = () => {
             </div>
             <div className="items-center text-center margin-auto z-2">
                 <h1 className="text-5xl font-bold">{headline}</h1>
-                <button className="mt-7" onClick={() => navigate('/order')}>{ctaText}</button>
+                <button
+                    className="mt-7"
+                    onClick={() => navigate('/order')}
+                    style={{backgroundColor: primary}}>{ctaText}</button>
             </div>
         </section>
 

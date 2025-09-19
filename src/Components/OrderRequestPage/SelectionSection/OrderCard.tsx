@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { primary } from "utils/colors"
 
-type OrderCardProps = {
+export type OrderCardProps = {
     title: string,
     img?: string,
     desc: string,
@@ -8,8 +9,8 @@ type OrderCardProps = {
 }
 
 const buttonStyle = {
-    backgroundColor: "oklch(1 0 252)",
-    border: "1px solid oklch(0 0 252/0.2)"
+    backgroundColor: "#ffffff",
+    border: "1px solid rgba(0,0,0,0.2)"
 }
 
 const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price}) => {
@@ -27,19 +28,19 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price}) => {
     const disableUpper = quantity >= 20
 
     return (
-        <div className="max-w-[400px] p-5">
+        <div className="max-w-[450px] p-5 border border-slate-200 rounded-xl">
             <img className="rounded-lg" src={img || `placeholder.jpg`}/>
-            <span className="flex justify-between">
-                <p className="text-xl font-bold">{title}</p>
+            <span className="flex justify-between mt-1">
+                <p className="text-xl font-medium">{title}</p>
                 <p>${price}</p>
             </span>
-            <p>{desc}</p>
+            <p className="tracking-tight my-1">{desc}</p>
             <div className="flex h-[30px] justify-between">
                 <div className="flex">
                     <button
                         style={buttonStyle}
                         disabled={disableLower}
-                        className="flex items-center"
+                        className="disabled:opacity-50 flex items-center"
                         onClick={() => setQuantity(prev => prev-1)}>
                         -
                     </button>
@@ -47,12 +48,12 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price}) => {
                     <button
                         style={buttonStyle}
                         disabled={disableUpper}
-                        className="flex items-center"
+                        className="disabled:opacity-50 flex items-center"
                         onClick={() => setQuantity(prev => prev+1)}>
                         +
                     </button>
                 </div>
-                <button className="text-white flex items-center ml-3">
+                <button className="text-white flex items-center ml-3" style={{backgroundColor: primary}}>
                     Add to cart
                 </button>
             </div>
