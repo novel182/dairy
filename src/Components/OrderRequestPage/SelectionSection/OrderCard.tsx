@@ -5,7 +5,8 @@ export type OrderCardProps = {
     title: string,
     img?: string,
     desc: string,
-    price: string
+    price: number,
+    unit: string
 }
 
 const buttonStyle = {
@@ -13,7 +14,7 @@ const buttonStyle = {
     border: "1px solid rgba(0,0,0,0.2)"
 }
 
-const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price}) => {
+const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price, unit}) => {
     const [quantity, setQuantity] = useState(0)
 
     const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) : void => {
@@ -30,9 +31,9 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price}) => {
     return (
         <div className="max-w-[450px] p-5 border border-slate-200 rounded-xl">
             <img className="rounded-lg" src={img || `placeholder.jpg`}/>
-            <span className="flex justify-between mt-1">
+            <span className="flex justify-between mt-1 items-center">
                 <p className="text-xl font-medium">{title}</p>
-                <p>${price}</p>
+                <p className="text-sm">${price}/{unit}</p>
             </span>
             <p className="tracking-tight my-1">{desc}</p>
             <div className="flex h-[30px] justify-between">

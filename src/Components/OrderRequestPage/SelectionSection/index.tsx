@@ -5,7 +5,8 @@ import type { OrderCardProps } from "./OrderCard"
 const orderCardInfo : OrderCardProps = {
     title: "Butter",
     desc: "Freshly churned butter made from high-quality cream",
-    price: "4.99/cup"
+    price: 4.99,
+    unit: "cup"
 }
 const cards : OrderCardProps[] = Array(6).fill(orderCardInfo)
 
