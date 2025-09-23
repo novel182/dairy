@@ -1,4 +1,4 @@
-type ItemsSummary = {
+export type ItemsSummary = {
     product: string,
     quantity: number,
     price: number,
@@ -14,8 +14,9 @@ const Summary : React.FC<SummaryProps> = ({collection}) => {
     const tax = subTotal * 0.07
 
     return (
-        <div className="min-w-[300px]">
+        <div className="w-full lg:col-span-1">
             <p>Order Summary</p>
+            
             {collection.map((item : ItemsSummary, index : number) => 
                 <div key={`item${index}`} className="flex justify-between">
                     <div>
@@ -25,6 +26,7 @@ const Summary : React.FC<SummaryProps> = ({collection}) => {
                     <p>${item.quantity * item.price}</p>
                 </div>
             )}
+
             <div className="border-t border-slate-200 mt-2">
                 <div className="flex justify-between">
                     <p>Subtotal</p>
@@ -35,6 +37,7 @@ const Summary : React.FC<SummaryProps> = ({collection}) => {
                     <p>{(tax).toFixed(2)}</p>
                 </div>
             </div>
+
             <div className="border-t border-slate-200 mt-2 text-lg font-bold flex justify-between">
                 <p>Total</p>
                 <p>{(subTotal + tax).toFixed(2)}</p>

@@ -1,4 +1,4 @@
-import { lightAccent, primary } from "utils/colors"
+import { primary } from "utils/colors"
 
 const NewsLetter : React.FC = () => {
     var inputBoxValue = ""
@@ -8,7 +8,7 @@ const NewsLetter : React.FC = () => {
     }
 
     return (
-        <section className={`flex flex-col items-center text-center mt-12 pb-5 bg-[${lightAccent}]`}>
+        <section className={`flex flex-col items-center text-center mt-12 pb-5 bg-[#FAF6E9]`}>
             <h1 className="mt-10 mb-1">Keep in Touch</h1>
             <p>Get the latest news about our products</p>
             <div className="flex items-center mt-4 mb-10">

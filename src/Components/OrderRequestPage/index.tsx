@@ -21,8 +21,8 @@ const betaSummary : ItemsSummary[] = [
 const OrderRequestPage : React.FC = () => {
     return (
         <div className="w-screen">
-            <div className="flex w-[80%] m-4">
-                <div className="m-auto">
+            <div className="grid m-4 gap-8 lg:grid-cols-3">
+                <div className="m-auto col-span-2">
                     {/* <Header /> */}
                     <SelectionSection />
                 </div>

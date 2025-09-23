@@ -35,7 +35,7 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price, unit}) =
                 <p className="text-xl font-medium">{title}</p>
                 <p className="text-sm">${price}/{unit}</p>
             </span>
-            <p className="tracking-tight my-1">{desc}</p>
+            <p className="tracking-tight my-1 max-w-[300px]">{desc}</p>
             <div className="flex h-[30px] justify-between">
                 <div className="flex">
                     <button
@@ -45,7 +45,7 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price, unit}) =
                         onClick={() => setQuantity(prev => prev-1)}>
                         -
                     </button>
-                    <input className="mx-3 w-[50px] text-center" type="text" value={quantity} onChange={onInputChange}/>
+                    <input className="mx-3 w-[30px] text-center focus:outline-0" type="text" value={quantity} onChange={onInputChange}/>
                     <button
                         style={buttonStyle}
                         disabled={disableUpper}
@@ -55,7 +55,7 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price, unit}) =
                     </button>
                 </div>
                 <button className="text-white flex items-center ml-3" style={{backgroundColor: primary}}>
-                    Add to cart
+                    <p className="text-sm">Add to cart</p>
                 </button>
             </div>
         </div>
