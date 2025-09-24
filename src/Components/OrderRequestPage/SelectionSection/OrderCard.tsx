@@ -1,12 +1,16 @@
 import { useState } from "react"
 import { primary } from "utils/colors"
+import type { ItemsSummary } from "../Summary"
 
 export type OrderCardProps = {
-    title: string,
-    img?: string,
-    desc: string,
-    price: number,
-    unit: string
+    item: {
+        product: string,
+        img?: string,
+        desc: string,
+        price: number,
+        unit: string
+    },
+    onClickFunction: (item: ItemsSummary) => void
 }
 
 const buttonStyle = {
@@ -14,7 +18,8 @@ const buttonStyle = {
     border: "1px solid rgba(0,0,0,0.2)"
 }
 
-const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price, unit}) => {
+const OrderCard : React.FC<OrderCardProps> = ({item, onClickFunction}: OrderCardProps) => {
+    const { product, img, desc, price, unit } = item
     const [quantity, setQuantity] = useState(0)
 
     const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) : void => {
@@ -32,7 +37,7 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price, unit}) =
         <div className="max-w-[450px] p-5 border border-slate-200 rounded-xl">
             <img className="rounded-lg" src={img || `placeholder.jpg`}/>
             <span className="flex justify-between mt-1 items-center">
-                <p className="text-xl font-medium">{title}</p>
+                <p className="text-xl font-medium">{product}</p>
                 <p className="text-sm">${price}/{unit}</p>
             </span>
             <p className="tracking-tight my-1 max-w-[300px]">{desc}</p>
@@ -54,7 +59,10 @@ const OrderCard : React.FC<OrderCardProps> = ({title, img, desc, price, unit}) =
                         +
                     </button>
                 </div>
-                <button className="text-white flex items-center ml-3" style={{backgroundColor: primary}}>
+                <button
+                    className="text-white flex items-center ml-3"
+                    style={{backgroundColor: primary}}
+                    onClick={() => onClickFunction({product, quantity, price, unit})}>
                     <p className="text-sm">Add to cart</p>
                 </button>
             </div>

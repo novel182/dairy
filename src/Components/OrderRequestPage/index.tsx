@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 // import Header from "./Header"
 import Summary from "./Summary"
 import SelectionSection from "./SelectionSection"
@@ -19,14 +21,22 @@ const betaSummary : ItemsSummary[] = [
 ]
 
 const OrderRequestPage : React.FC = () => {
+    const [summaryItems, setSummaryItems] = useState<ItemsSummary[]>(betaSummary)
+    const addToCart = (item: ItemsSummary) => {
+        console.log('before adding', summaryItems)
+        summaryItems.push(item)
+        setSummaryItems(summaryItems)
+        console.log('after adding', summaryItems)
+    }
+
     return (
         <div className="w-screen">
             <div className="grid m-4 gap-8 lg:grid-cols-3">
                 <div className="m-auto col-span-2">
                     {/* <Header /> */}
-                    <SelectionSection />
+                    <SelectionSection onClickFunction={addToCart}/>
                 </div>
-                <Summary collection={betaSummary}/>
+                <Summary collection={summaryItems}/>
             </div>
         </div>
     )

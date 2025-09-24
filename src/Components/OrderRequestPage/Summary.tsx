@@ -18,7 +18,7 @@ const Summary : React.FC<SummaryProps> = ({collection}) => {
     return (
         <div className="w-full lg:col-span-1 md:col-span-2">
             <div className="bg-[#FAF6E9] rounded-xl shadow-sm border border-gray-200 p-4 mt-10">
-                <p className="font-semibold my-3">Order Summary</p>
+                <p className="font-semibold my-3 mx-auto ">Order Summary</p>
                 
                 {collection.map((item : ItemsSummary, index : number) => 
                     <div key={`item${index}`} className="flex justify-between my-2">
