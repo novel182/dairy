@@ -11,7 +11,7 @@ const cards : OrderCardProps[] = Array(6).fill(orderCardInfo)
 
 const SelectionSection : React.FC = () => {
     return (
-        <div className={`my-10 bg-[#FAF6E9] px-8 py-7 rounded-xl`}>
+        <div className={`mt-10 bg-[#FAF6E9] px-8 py-7 rounded-xl shadow-sm border border-gray-200`}>
             <p className="my-4 text-xl font-bold">Select products</p>
             <div className="grid md:grid-cols-2 gap-6">
                 {cards.map((cardInfo, index) => 
