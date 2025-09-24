@@ -61,7 +61,7 @@ const OrderCard : React.FC<OrderCardProps> = ({item, onClickFunction}: OrderCard
                 </div>
                 <button
                     className="text-white flex items-center ml-3"
-                    style={{backgroundColor: primary}}
+                    style={{backgroundColor: primary, padding: "0 10px"}}
                     onClick={() => onClickFunction({product, quantity, price, unit})}>
                     <p className="text-sm">Add to cart</p>
                 </button>

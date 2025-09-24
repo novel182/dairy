@@ -24,7 +24,7 @@ const OrderRequestPage : React.FC = () => {
     // TODO: change the default
     const [summaryItems, setSummaryItems] = useState<ItemsSummary[]>(betaSummary)
 
-    const addToCart = (item: ItemsSummary) => {
+    const addToCart = (item: ItemsSummary) : void => {
         const itemPresent = summaryItems.find(itemsSummary => itemsSummary.product === item.product)
 
         if(itemPresent) itemPresent.quantity += item.quantity
