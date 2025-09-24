@@ -21,12 +21,16 @@ const betaSummary : ItemsSummary[] = [
 ]
 
 const OrderRequestPage : React.FC = () => {
+    // TODO: change the default
     const [summaryItems, setSummaryItems] = useState<ItemsSummary[]>(betaSummary)
+
     const addToCart = (item: ItemsSummary) => {
-        console.log('before adding', summaryItems)
-        summaryItems.push(item)
-        setSummaryItems(summaryItems)
-        console.log('after adding', summaryItems)
+        const itemPresent = summaryItems.find(itemsSummary => itemsSummary.product === item.product)
+
+        if(itemPresent) itemPresent.quantity += item.quantity
+        else summaryItems.push(item)
+
+        setSummaryItems([...summaryItems])      // add a new reference to trigger re-render
     }
 
     return (
