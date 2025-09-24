@@ -4,11 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 
 import './index.css'
 import AppRoutes from 'utils/AppRoutes'
+import CartProvider from './contexts/CartProvider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <AppRoutes />
+      <CartProvider>
+        <AppRoutes />
+      </CartProvider>
     </BrowserRouter>
   </StrictMode>,
 )

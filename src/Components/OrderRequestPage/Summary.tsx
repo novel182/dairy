@@ -8,10 +8,12 @@ export type ItemsSummary = {
 }
 
 type SummaryProps = {
-    collection: ItemsSummary[]
+    collection?: ItemsSummary[]
 }
 
 const Summary : React.FC<SummaryProps> = ({collection}) => {
+    if(!collection || collection.length === 0) return null
+    
     const subTotal = collection.reduce((acc, item) => acc + item.quantity * item.price, 0)
     const tax = subTotal * 0.07
 

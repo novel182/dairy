@@ -1,16 +1,15 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { primary } from "utils/colors"
 import type { ItemsSummary } from "../Summary"
+import { CartContext } from "contexts/CartProvider"
+import type { CartContextType } from "contexts/CartProvider"
 
 export type OrderCardProps = {
-    item: {
-        product: string,
-        img?: string,
-        desc: string,
-        price: number,
-        unit: string
-    },
-    onClickFunction: (item: ItemsSummary) => void
+    product: string,
+    img?: string,
+    desc: string,
+    price: number,
+    unit: string
 }
 
 const buttonStyle = {
@@ -18,9 +17,9 @@ const buttonStyle = {
     border: "1px solid rgba(0,0,0,0.2)"
 }
 
-const OrderCard : React.FC<OrderCardProps> = ({item, onClickFunction}: OrderCardProps) => {
-    const { product, img, desc, price, unit } = item
+const OrderCard : React.FC<OrderCardProps> = ({product, img, desc, price, unit}: OrderCardProps) => {
     const [quantity, setQuantity] = useState(0)
+    const { addToCart } : CartContextType = useContext(CartContext)
 
     const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) : void => {
         var val = parseInt(event.target.value)
@@ -62,7 +61,8 @@ const OrderCard : React.FC<OrderCardProps> = ({item, onClickFunction}: OrderCard
                 <button
                     className="text-white flex items-center ml-3"
                     style={{backgroundColor: primary, padding: "0 10px"}}
-                    onClick={() => onClickFunction({product, quantity, price, unit})}>
+                    onClick={() => addToCart({product, quantity, price, unit})}
+                    disabled={quantity === 0}>
                     <p className="text-sm">Add to cart</p>
                 </button>
             </div>

@@ -10,7 +10,8 @@ export default defineConfig({
     alias: {
       'components': path.resolve(__dirname, './src/components'),
       'utils': path.resolve(__dirname, './src/utils'),
-      'assets': path.resolve(__dirname, './src/assets')
+      'assets': path.resolve(__dirname, './src/assets'),
+      'contexts': path.resolve(__dirname, './src/contexts')
     }
   }
 })
