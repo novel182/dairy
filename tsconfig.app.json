@@ -28,6 +28,7 @@
       "utils": ["./src/utils"],
       "assets": ["./src/assets"],
       "contexts": ["./src/contexts"],
+      "mocks": ["./src/mocks"]
     }
   },
   "include": ["src"]

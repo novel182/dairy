@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { primary } from "utils/colors"
 import type { ItemsSummary } from "../Summary"
 import { CartContext } from "contexts/CartProvider"
@@ -18,8 +18,16 @@ const buttonStyle = {
 }
 
 const OrderCard : React.FC<OrderCardProps> = ({product, img, desc, price, unit}: OrderCardProps) => {
+    const { items, addToCart } : CartContextType = useContext(CartContext)
+    const itemSummary : ItemsSummary = items.find((item: ItemsSummary) => item.product === product)
     const [quantity, setQuantity] = useState(0)
-    const { addToCart } : CartContextType = useContext(CartContext)
+
+    const CartQuantity = itemSummary?.quantity || 0
+    const buttonText = CartQuantity === 0 ? "Add to cart" : "Update cart"
+
+    useEffect(() => {
+        if(itemSummary) setQuantity(itemSummary.quantity)
+    }, [itemSummary])
 
     const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) : void => {
         var val = parseInt(event.target.value)
@@ -33,14 +41,17 @@ const OrderCard : React.FC<OrderCardProps> = ({product, img, desc, price, unit}:
     const disableUpper = quantity >= 20
 
     return (
-        <div className="max-w-[450px] p-5 border border-slate-200 rounded-xl">
+        <div className="max-w-[450px] p-5 border border-slate-200 rounded-xl flex flex-col">
             <img className="rounded-lg" src={img || `placeholder.jpg`}/>
+
             <span className="flex justify-between mt-1 items-center">
                 <p className="text-xl font-medium">{product}</p>
                 <p className="text-sm">${price}/{unit}</p>
             </span>
+
             <p className="tracking-tight my-1 max-w-[300px]">{desc}</p>
-            <div className="flex h-[30px] justify-between">
+
+            <div className="flex h-[30px] justify-between mt-auto">
                 <div className="flex">
                     <button
                         style={buttonStyle}
@@ -59,13 +70,14 @@ const OrderCard : React.FC<OrderCardProps> = ({product, img, desc, price, unit}:
                     </button>
                 </div>
                 <button
-                    className="text-white flex items-center ml-3"
+                    className="text-white flex items-center ml-3 disabled:opacity-50"
                     style={{backgroundColor: primary, padding: "0 10px"}}
                     onClick={() => addToCart({product, quantity, price, unit})}
-                    disabled={quantity === 0}>
-                    <p className="text-sm">Add to cart</p>
+                    disabled={CartQuantity === quantity}>
+                    <p className="text-sm">{buttonText}</p>
                 </button>
             </div>
+
         </div>
     )
 }
