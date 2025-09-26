@@ -1,6 +1,6 @@
 const Footer : React.FC = () => {
     return (
-        <section className="my-15 items-center">
+        <section className="my-20 items-center">
             <div className="m-auto flex justify-between w-[60%]">
                 <div className="text-left">
                     <h2 className="text-3xl mb-4 font-bold">Alpine Dairy</h2>

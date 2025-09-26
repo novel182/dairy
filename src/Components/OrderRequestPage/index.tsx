@@ -5,6 +5,7 @@ import SelectionSection from "./SelectionSection"
 import { CartContext } from "contexts/CartProvider"
 import type { CartContextType, ItemSummary, BaseItem } from "types"
 import productList from "mocks/productList"
+import Footer from "components/Footer"
 
 const OrderRequestPage : React.FC = () => {
     const assertedList = productList as BaseItem[]
@@ -18,12 +19,13 @@ const OrderRequestPage : React.FC = () => {
 
     return (
         <div className="w-screen">
-            <div className="grid m-4 gap-8 lg:grid-cols-3">
+            <div className="grid m-4 mx-10 gap-8 lg:grid-cols-3">
                 <div className="m-auto col-span-2">
                     <SelectionSection />
                 </div>
                 <Summary collection={finalItems}/>
             </div>
+            <Footer />
         </div>
     )
 }
