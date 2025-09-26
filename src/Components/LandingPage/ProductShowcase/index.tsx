@@ -1,9 +1,10 @@
 import ProductCard from "./ProductCard"
-import type { ProductCardProps } from "./ProductCard"
+import type { BaseProduct } from "types"
 
-const cardInfo : ProductCardProps = {
-    title: 'Placeholders',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+const cardInfo : BaseProduct = {
+    product: 'Placeholders',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    id: 'placeholder',
 }
 
 const cards = Array(6).fill(cardInfo)

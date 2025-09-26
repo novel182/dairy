@@ -4,7 +4,7 @@ import NewsLetter from "./NewsLetter"
 import ProductShowcase from "./ProductShowcase"
 import Footer from "./Footer"
 
-const Container : React.FC = () => {
+const LandingPage : React.FC = () => {
     return (
         <>
             <Hero />
@@ -16,4 +16,4 @@ const Container : React.FC = () => {
     )
 }
 
-export default Container
+export default LandingPage

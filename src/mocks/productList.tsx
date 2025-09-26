@@ -1,47 +1,53 @@
-import type { OrderCardProps } from "components/OrderRequestPage/SelectionSection/OrderCard"
+import type { BaseItem } from "types"
 
-const butter : OrderCardProps = {
+const butter : BaseItem = {
     product: "Butter",
     desc: "Freshly churned butter made from high-quality cream",
     price: 4.99,
-    unit: "cup"
+    unit: "cup",
+    id: "butter"
 }
 
-const paneer : OrderCardProps = {
+const paneer : BaseItem = {
     product: "Paneer",
     desc: "Soft and crumbly cheese, perfect for cooking",
     price: 5.99,
-    unit: "lb"
+    unit: "lb",
+    id: "paneer"
 }
 
-const milk : OrderCardProps = {
+const milk : BaseItem = {
     product: "Whole milk",
     desc: "Rich and creamy whole milk from grass-fed cows",
     price: 3.49,
-    unit: "gallon"
+    unit: "gallon",
+    id: "milk"
 }
 
-const mozerellaCheese : OrderCardProps = {
+const mozerellaCheese : BaseItem = {
     product: "Mozzarella cheese",
     desc: "Soft and mild mozzarella cheese, perfect for melting",
     price: 6.49,
-    unit: "lb"
+    unit: "lb",
+    id: "cheese"
 }
 
-const ghee : OrderCardProps = {
+const ghee : BaseItem = {
     product: "Ghee",
     desc: "Clarified butter with a rich, nutty flavor",
     price: 9.99,
-    unit: "litre"
+    unit: "litre",
+    id: "ghee"
 }
 
-const yogurt : OrderCardProps = {
+const yogurt : BaseItem = {
     product: "Yogurt",
     desc: "Creamy and tangy yogurt, great for breakfast or snacks",
     price: 2.99,
-    unit: "cup"
+    unit: "cup",
+    id: "yogurt"
 }
 
-const productList : OrderCardProps[] = [butter, paneer, milk, mozerellaCheese, ghee, yogurt]
+const productList : BaseItem[] = [butter, paneer, milk, mozerellaCheese, ghee, yogurt]
 
 export default productList

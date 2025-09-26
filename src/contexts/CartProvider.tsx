@@ -1,34 +1,15 @@
 import { createContext, useState, type ReactElement } from "react"
-import { ItemsSummary } from "components/OrderRequestPage/Summary"
+import type { CartContextType, cartCookieItem } from "types"
+import { setCartAsCookies, getCartFromCookies } from "utils/cookies"
 
-// const betaSummary : ItemsSummary[] = [
-//     {
-//         product: "Butter",
-//         quantity: 2,
-//         price: 4.99,
-//         unit: "cup"
-//     },
-//     {
-//         product: "Cheese",
-//         quantity: 3,
-//         price: 7.99,
-//         unit: "lb"
-//     }
-// ]
-
-export type CartContextType = {
-    items?: ItemsSummary[],
-    setItems?: React.Dispatch<React.SetStateAction<ItemsSummary[]>>,
-    addToCart?: (item: ItemsSummary) => void
-}
-
-export const CartContext = createContext<CartContextType>({})
+export const CartContext = createContext<CartContextType>({items: []})
 
 const CartProvider : React.FC<{children: ReactElement | ReactElement[]}>= ({children}) => {
-    const [items, setItems] = useState<ItemsSummary[]>([])
+    const cookiedCart = getCartFromCookies() || []
+    const [items, setItems] = useState<cartCookieItem[]>(cookiedCart)
 
-    const addToCart = (item: ItemsSummary) : void => {
-        const itemPresent = items.find(itemsSummary => itemsSummary.product === item.product)
+    const addToCart = (item: cartCookieItem) : void => {
+        const itemPresent = items.find(itemSummary => itemSummary.id === item.id)
 
         if(!itemPresent && item.quantity === 0) return   // do nothing if item not present and quantity is 0
         
@@ -37,10 +18,10 @@ const CartProvider : React.FC<{children: ReactElement | ReactElement[]}>= ({chil
             ? items.splice(items.indexOf(itemPresent), 1)
             : itemPresent.quantity = item.quantity
         }
-        else items.push(item)
+        else items.push({id: item.id, quantity: item.quantity})
 
+        setCartAsCookies(items)
         setItems([...items])      // add a new reference to trigger re-render
-        console.log('new summary', items)
     }
 
     return (

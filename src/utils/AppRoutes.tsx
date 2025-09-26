@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import Container from "components/Container"
+import Container from "components/LandingPage"
 import OrderRequestPage from "components/OrderRequestPage"
 
 const AppRoutes : React.FC = () => {

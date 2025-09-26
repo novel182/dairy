@@ -1,30 +1,19 @@
 import { primary } from "utils/colors"
-
-export type ItemsSummary = {
-    product: string,
-    quantity: number,
-    price: number,
-    unit: string,
-}
+import type { ItemSummary } from "types"
 
 type SummaryProps = {
-    collection?: ItemsSummary[]
+    collection?: ItemSummary[]
 }
 
 const Summary : React.FC<SummaryProps> = ({collection}) => {
-    if(!collection || collection.length === 0) return (
-        <div className="lg:col-span-1 md_col-span-2">
-            <div className="">
-                
-            </div>
-        </div>)
 
-    const subTotal = collection.reduce((acc, item) => acc + item.quantity * item.price, 0)
+    // the assertion on collection is safe because Summary is only rendered when collection is non-empty
+    const subTotal = collection!.reduce((acc, item) => acc + item.quantity * item.price, 0)
     const tax = subTotal * 0.07
 
     return (
         <>
-            {collection.map((item : ItemsSummary, index : number) => 
+            {collection!.map((item : ItemSummary, index : number) => 
                 <div key={`item${index}`} className="flex justify-between my-2">
                     <div>
                         <p>{item.product}</p>

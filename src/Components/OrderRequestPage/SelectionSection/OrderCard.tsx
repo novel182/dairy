@@ -1,25 +1,16 @@
 import { useState, useContext, useEffect } from "react"
 import { primary } from "utils/colors"
-import type { ItemsSummary } from "../Summary"
 import { CartContext } from "contexts/CartProvider"
-import type { CartContextType } from "contexts/CartProvider"
-
-export type OrderCardProps = {
-    product: string,
-    img?: string,
-    desc: string,
-    price: number,
-    unit: string
-}
+import type { BaseItem, CartContextType, cartCookieItem } from "types"
 
 const buttonStyle = {
     backgroundColor: "#ffffff",
     border: "1px solid rgba(0,0,0,0.2)"
 }
 
-const OrderCard : React.FC<OrderCardProps> = ({product, img, desc, price, unit}: OrderCardProps) => {
+const OrderCard : React.FC<BaseItem> = ({id, product, img, desc, price, unit}: BaseItem) => {
     const { items, addToCart } : CartContextType = useContext(CartContext)
-    const itemSummary : ItemsSummary = items.find((item: ItemsSummary) => item.product === product)
+    const itemSummary : cartCookieItem | undefined = items?.find(item => item.id === id)
     const [quantity, setQuantity] = useState(0)
 
     const CartQuantity = itemSummary?.quantity || 0
@@ -72,7 +63,7 @@ const OrderCard : React.FC<OrderCardProps> = ({product, img, desc, price, unit}:
                 <button
                     className="text-white flex items-center ml-3 disabled:opacity-50"
                     style={{backgroundColor: primary, padding: "0 10px"}}
-                    onClick={() => addToCart({product, quantity, price, unit})}
+                    onClick={() => addToCart && addToCart({id, quantity})}
                     disabled={CartQuantity === quantity}>
                     <p className="text-sm">{buttonText}</p>
                 </button>
