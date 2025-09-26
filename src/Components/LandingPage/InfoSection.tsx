@@ -9,7 +9,7 @@ const InfoSection : React.FC = () => {
                 <p className="mt-4 text-balance text-xl">{description}</p>
             </div>
             <div className="shadow-lg rounded-lg">
-                <img className="w-full h-auto" src="placeholder.jpg"/>
+                <img className="w-full h-auto rounded-lg" src="placeholder.jpg"/>
             </div>
         </section>
     )
