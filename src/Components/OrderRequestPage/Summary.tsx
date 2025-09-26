@@ -1,6 +1,7 @@
 import { primary } from "utils/colors"
 import type { ItemSummary } from "types"
 
+// not in types because it's only used here
 type SummaryProps = {
     collection?: ItemSummary[]
 }
@@ -54,13 +55,13 @@ const SummaryContainer : React.FC<SummaryProps> = ({collection}) => {
     return (
         <div className="w-full lg:col-span-1 md:col-span-2">
             <div className="bg-[#FAF6E9] rounded-xl shadow-sm border border-gray-200 p-6 mt-10">
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                     <img src="cartIcon.png" className="bg-[#FAF6E9] my-3" width="30"/>
-                    <p className="font-semibold my-3 md:ml-3 lg:mx-auto">Order Summary</p>
+                    <p className="font-semibold my-3 ml-3">Order Summary</p>
                 </div>
                 {(
                     !showSummary ?
-                    <p className="flex items-center text-balanced h-[200px]">I'm empty ... just like the void in your heart</p>
+                    <div className="flex justify-center text-center"><p className="flex items-center text-balanced h-[200px]">I'm empty ... just like the void in your heart</p></div>
                     :
                     <Summary collection={collection}/>
                 )}

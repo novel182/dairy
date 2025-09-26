@@ -17,7 +17,7 @@ export interface BaseItem extends BaseProduct {
 }
 
 export interface ItemSummary extends BaseItem {
-    quantity?: number
+    quantity: number
 }
 
 export interface cartCookieItem {
