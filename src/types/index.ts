@@ -25,3 +25,7 @@ export interface cartCookieItem {
     quantity: number
 }
 
+export interface HeaderProps {
+    backLink: string,
+    backText: string
+}

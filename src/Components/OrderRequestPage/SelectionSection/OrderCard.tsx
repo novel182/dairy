@@ -14,7 +14,7 @@ const OrderCard : React.FC<BaseItem> = ({id, product, img, desc, price, unit}: B
     const [quantity, setQuantity] = useState(0)
 
     const CartQuantity = itemSummary?.quantity || 0
-    const buttonText = CartQuantity === 0 ? "Add to cart" : "Update"
+    const buttonText = CartQuantity === 0 ? "Add order" : "Update"
 
     useEffect(() => {
         if(itemSummary) setQuantity(itemSummary.quantity)

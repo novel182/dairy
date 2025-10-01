@@ -1,11 +1,12 @@
 import { useContext } from "react"
 
-import Summary from "./Summary"
+import Summary from "./Cart"
 import SelectionSection from "./SelectionSection"
 import { CartContext } from "contexts/CartProvider"
 import type { CartContextType, ItemSummary, BaseItem } from "types"
 import productList from "mocks/productList"
 import Footer from "components/Footer"
+import Header from "components/Header"
 
 const OrderRequestPage : React.FC = () => {
     const assertedList = productList as BaseItem[]
@@ -19,7 +20,8 @@ const OrderRequestPage : React.FC = () => {
 
     return (
         <div className="w-screen">
-            <div className="grid m-4 mx-10 gap-8 lg:grid-cols-3">
+            <Header backLink="/" backText="Home"/>
+            <div className="grid p-4 px-10 gap-8 lg:grid-cols-3 bg-[#FAF6E9]">
                 <div className="m-auto col-span-2">
                     <SelectionSection />
                 </div>
