@@ -3,20 +3,14 @@ import { useContext } from "react"
 import Summary from "./Cart"
 import SelectionSection from "./SelectionSection"
 import { CartContext } from "contexts/CartProvider"
-import type { CartContextType, ItemSummary, BaseItem } from "types"
-import productList from "mocks/productList"
+import type { CartContextType, ItemSummary } from "types"
+import { cartItemsToSummary } from "utils/cartParser"
 import Footer from "components/Footer"
 import Header from "components/Header"
 
 const OrderRequestPage : React.FC = () => {
-    const assertedList = productList as BaseItem[]
     const { items } : CartContextType = useContext(CartContext)
-
-    // Merge the mock list (productList) and cookie list (items) based on id
-    const summaryItems = items!.map((item => ({...item, ...assertedList.find(prod => prod.id === item.id)})))
-
-    // Some of the list items might have no quantity key (if not on cart)
-    const finalItems: ItemSummary[] = summaryItems.filter((item) : item is ItemSummary => item.quantity !== undefined)
+    const finalItems : ItemSummary[] = cartItemsToSummary(items)
 
     return (
         <div className="w-screen">
