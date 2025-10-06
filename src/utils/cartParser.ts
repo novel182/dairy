@@ -1,7 +1,7 @@
-import type { cartCookieItem, ItemSummary, BaseItem } from "types"
+import type { CartCookieItem, ItemSummary, BaseItem } from "types"
 import productList from "mocks/productList"
 
-export const cartItemsToSummary = (items: cartCookieItem[]) => {
+export const cartItemsToSummary = (items: CartCookieItem[]) => {
     const assertedList = productList as BaseItem[]
 
     // Merge the mock list (productList) and cookie list (items) based on id

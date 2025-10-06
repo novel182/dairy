@@ -1,14 +1,14 @@
 import { createContext, useState, type ReactElement } from "react"
-import type { CartContextType, cartCookieItem } from "types"
+import type { CartContextType, CartCookieItem } from "types"
 import { setCartAsCookies, getCartFromCookies } from "utils/cookies"
 
 export const CartContext = createContext<CartContextType>({items: []})
 
 const CartProvider : React.FC<{children: ReactElement | ReactElement[]}>= ({children}) => {
     const cookiedCart = getCartFromCookies() || []
-    const [items, setItems] = useState<cartCookieItem[]>(cookiedCart)
+    const [items, setItems] = useState<CartCookieItem[]>(cookiedCart)
 
-    const addToCart = (item: cartCookieItem) : void => {
+    const addToCart = (item: CartCookieItem) : void => {
         const itemPresent = items.find(itemSummary => itemSummary.id === item.id)
 
         if(!itemPresent && item.quantity === 0) return   // do nothing if item not present and quantity is 0

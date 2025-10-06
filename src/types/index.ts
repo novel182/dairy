@@ -1,7 +1,7 @@
 export interface CartContextType {
-    items: cartCookieItem[] | [],
-    setItems?: React.Dispatch<React.SetStateAction<cartCookieItem[]>>,
-    addToCart?: (item: cartCookieItem) => void
+    items: CartCookieItem[] | [],
+    setItems?: React.Dispatch<React.SetStateAction<CartCookieItem[]>>,
+    addToCart?: (item: CartCookieItem) => void
 }
 
 export interface BaseProduct {
@@ -20,7 +20,7 @@ export interface ItemSummary extends BaseItem {
     quantity: number
 }
 
-export interface cartCookieItem {
+export interface CartCookieItem {
     id: string,
     quantity: number
 }
