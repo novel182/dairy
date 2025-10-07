@@ -1,5 +1,5 @@
 import QuantityButtons from "components/QuantityButtons"
-import type { BaseItem, CartContextType, CartCookieItem } from "types"
+import type { BaseItem } from "types"
 
 const OrderCard : React.FC<BaseItem> = ({id, product, img, desc, price, unit}: BaseItem) => {
     return (

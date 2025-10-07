@@ -1,20 +1,14 @@
 import { useNavigate } from "react-router-dom"
 
-import { primary } from "utils/colors"
 import type { ItemSummary } from "types"
+import PrimaryButton from "../PrimaryButton"
 
 // not in types because it's only used here
 type SummaryProps = {
     collection?: ItemSummary[]
 }
 
-// on second thought, I wanted this component to only show the 'staged' orders
 const Cart : React.FC<SummaryProps> = ({collection}) => {
-
-    // the assertion on collection is safe because Summary is only rendered when collection is non-empty
-    // const subTotal = collection!.reduce((acc, item) => acc + item.quantity * item.price, 0)
-    // const tax = subTotal * 0.07
-
     const navigate = useNavigate()
 
     return (
@@ -46,9 +40,7 @@ const Cart : React.FC<SummaryProps> = ({collection}) => {
             </div> */}
 
             <div className="text-center mt-4">
-                <button style={{backgroundColor: primary}} className="w-[60%]" onClick={() => navigate('/checkout')}>
-                    Checkout
-                </button>
+                <PrimaryButton text="Checkout" onClick={() => navigate('/checkout')}/>
             </div>
         </>
     )
@@ -62,7 +54,7 @@ const CartContainer : React.FC<SummaryProps> = ({collection}) => {
             <div className="bg-[#FFFDF6] rounded-xl shadow-sm border border-gray-200 p-6 mt-10">
                 <div className="flex items-center justify-center">
                     <img src="cartIcon.png" className="my-3" width="30"/>
-                    <p className="font-semibold my-3 ml-3">Order Summary</p>
+                    <p className="font-semibold my-3 ml-3">Cart</p>
                 </div>
                 {(
                     !showSummary ?

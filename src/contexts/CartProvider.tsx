@@ -10,6 +10,7 @@ const CartProvider : React.FC<{children: ReactElement | ReactElement[]}>= ({chil
 
     const addToCart = (item: CartCookieItem) : void => {
         const itemPresent = items.find(itemSummary => itemSummary.id === item.id)
+        console.log('triggered')
 
         if(!itemPresent && item.quantity === 0) return   // do nothing if item not present and quantity is 0
         
