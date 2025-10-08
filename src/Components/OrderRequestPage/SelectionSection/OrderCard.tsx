@@ -11,7 +11,7 @@ const OrderCard : React.FC<BaseItem> = ({id, product, img, desc, price, unit}: B
                 <p className="text-sm">${price}/{unit}</p>
             </span>
 
-            <p className="tracking-tight my-1 max-w-[300px]">{desc}</p>
+            <p className="tracking-tight my-1 max-w-[300px] text-sm">{desc}</p>
             <QuantityButtons cartButton={true} id={id}/>
         </div>
     )

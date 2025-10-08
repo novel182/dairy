@@ -6,6 +6,7 @@ import { cartItemsToSummary } from "utils/cartParser"
 import Header from "components/Header"
 import OrderReview from "./OrderReview"
 import OrderSummary from "./OrderSummary"
+import PaymentDetails from "./PaymentDetails"
 
 const CheckoutPage : React.FC | null = () => {
     const { items, addToCart } : CartContextType = useContext(CartContext)
@@ -21,7 +22,7 @@ const CheckoutPage : React.FC | null = () => {
                 <div className="grid lg:grid-cols-3 md:grid-cols-2">
                     <div className="col-span-2">
                         <OrderReview items={parsedItems} addFunction={addToCart!}/>
-                        {/* Payment options + personal information */}
+                        <PaymentDetails />
                     </div>
                     <OrderSummary items={parsedItems}/>
                 </div>

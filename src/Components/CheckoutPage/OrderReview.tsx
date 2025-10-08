@@ -41,7 +41,7 @@ const OrderReview : React.FC<OrderReviewProps> = ({items, addFunction}) => {
                             <img className="rounded-lg" src={item.img || "placeholder.jpg"} width="90px"/>
                             <div className="flex flex-col">
                                 <p>{item.product}</p>
-                                <p>${item.price} per {item.unit}</p>
+                                <p className="text-sm ">${item.price} per {item.unit}</p>
                                 <QuantityButtons cartButton={false} id={item.id}/>
                             </div>
                         </div>
