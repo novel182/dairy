@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 
 import { CartContext } from "contexts/CartProvider"
 import type { ItemSummary, CartContextType } from "types"
@@ -7,10 +7,27 @@ import Header from "components/Header"
 import OrderReview from "./OrderReview"
 import OrderSummary from "./OrderSummary"
 import PaymentDetails from "./PaymentDetails"
+import type { PaymentInput, AddressInput } from "types"
+import Footer from "components/Footer"
 
 const CheckoutPage : React.FC | null = () => {
     const { items, addToCart } : CartContextType = useContext(CartContext)
     const parsedItems : ItemSummary[] = cartItemsToSummary(items)
+
+    let paymentInformation = {}
+    let addressInformation = {}
+    // triggerCollection is also the place order trigger
+    const [triggerCollection, setTrigger] = useState(false)
+
+    const collectInput = (payment: PaymentInput | {}, address: AddressInput | {}) => {
+        paymentInformation = payment
+        addressInformation = address
+        console.log(paymentInformation, addressInformation)
+    }
+
+    const onPlaceOrder = () => {
+        setTrigger(true)
+    }
 
     return (
         <div className="w-screen">
@@ -22,11 +39,12 @@ const CheckoutPage : React.FC | null = () => {
                 <div className="grid lg:grid-cols-3 md:grid-cols-2">
                     <div className="col-span-2">
                         <OrderReview items={parsedItems} addFunction={addToCart!}/>
-                        <PaymentDetails />
+                        <PaymentDetails collectInput={collectInput} triggerCollection={triggerCollection}/>
                     </div>
-                    <OrderSummary items={parsedItems}/>
+                    <OrderSummary items={parsedItems} onClickFunction={onPlaceOrder}/>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

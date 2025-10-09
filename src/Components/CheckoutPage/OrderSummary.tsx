@@ -2,16 +2,17 @@ import type { ItemSummary } from "types"
 import PrimaryButton from "../PrimaryButton"
 
 interface OrderSummaryProps {
-    items: ItemSummary[]
+    items: ItemSummary[],
+    onClickFunction?: () => void
 }
 
-const OrderSummary : React.FC<OrderSummaryProps> = ({items}) => {
+const OrderSummary : React.FC<OrderSummaryProps> = ({items, onClickFunction}) => {
     const subTotal = items.reduce((acc, item) => acc + item.quantity * item.price, 0)
     const tax = subTotal * 0.07
 
     return(
-        <div className="md:col-span-2 lg:col-span-1">
-            <div className=" shadow-md m-4 p-3 rounded-md bg-[#FFFDF6]">
+        <div className="md:col-span-2 lg:col-span-1 pr-5">
+            <div className=" shadow-md mx-3 my-7 p-3 rounded-md bg-[#FFFDFF]">
                 <p className="my-4">Order Summary</p>
                 {items.map((item, index) => 
                     <div key={`summaryItem${index}`} className="flex justify-between my-1">
@@ -33,7 +34,7 @@ const OrderSummary : React.FC<OrderSummaryProps> = ({items}) => {
                     <p>${(subTotal+tax).toFixed(2)}</p>
                 </div>
                 <div className="text-center mt-4">
-                    <PrimaryButton text="Place Order" disabled={(!items || items.length === 0)}/>
+                    <PrimaryButton text="Place Order" disabled={(!items || items.length === 0)} onClick={onClickFunction}/>
                 </div>
             </div>
         </div>

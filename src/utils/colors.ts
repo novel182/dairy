@@ -1,4 +1,4 @@
-export const light = "#FFFDF6"
+export const light = "#FFFDFF"
 export const lightAccent = "#FAF6E9"
 
 export const secondary = "#DDEB9D"

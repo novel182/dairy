@@ -29,3 +29,17 @@ export interface HeaderProps {
     backLink: string,
     backText: string
 }
+
+export interface PaymentInput {
+    card: number,
+    expMonth: number,
+    expYear: number,
+    cvc: number,
+    name: string
+}
+
+export interface AddressInput {
+    streetAddress: string,
+    city: string,
+    zipCode: number
+}

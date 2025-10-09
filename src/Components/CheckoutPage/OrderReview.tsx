@@ -15,7 +15,7 @@ const OrderReview : React.FC<OrderReviewProps> = ({items, addFunction}) => {
 
     if(!items || !items.length){
         return (
-            <div className="flex flex-col items-center justify-center p-4 m-7 bg-[#FFFDF6] rounded-md shadow-md h-[150px]">
+            <div className="flex flex-col items-center justify-center p-4 m-7 bg-[#FFFDFF] rounded-md shadow-md h-[150px]">
                 <p>Nothing here. Add some products to the cart</p>
                 <Link to="/order" className="rounded-xl bg-[#A0C878] px-3 py-2 my-3">View products</Link>
             </div>
@@ -23,7 +23,7 @@ const OrderReview : React.FC<OrderReviewProps> = ({items, addFunction}) => {
     }
 
     return (
-        <div className="p-4 m-7 bg-[#FFFDF6] rounded-md shadow-md">
+        <div className="p-5 m-7 bg-[#FFFDFF] rounded-md shadow-md">
             <div className="flex justify-between">
                 <div className="flex flex-col my-2">
                     <p className="text-2xl">Order Review</p>

@@ -51,7 +51,7 @@ const CartContainer : React.FC<SummaryProps> = ({collection}) => {
 
     return (
         <div className="w-full lg:col-span-1 md:col-span-2">
-            <div className="bg-[#FFFDF6] rounded-xl shadow-sm border border-gray-200 p-6 mt-10">
+            <div className="bg-[#FFFDFF] rounded-xl shadow-sm border border-gray-200 p-6 mt-10">
                 <div className="flex items-center justify-center">
                     <img src="cartIcon.png" className="my-3" width="30"/>
                     <p className="font-semibold my-3 ml-3">Cart</p>
