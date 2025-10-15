@@ -10,9 +10,11 @@ const Header : React.FC<HeaderProps> = ({backLink, backText}) => {
                     <img src="backArrow.png" width="25"/>
                     {backText}
                 </Link>
-                <p className="w-full text-center font-medium">
-                   Alpine Dairy
-                </p>
+                <div className="w-full text-center font-medium">
+                    <Link to="/">
+                        Alpine Dairy
+                    </Link>
+                </div>
             </div>
         </div>
     )
