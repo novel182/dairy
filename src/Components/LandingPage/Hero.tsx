@@ -17,7 +17,8 @@ const Hero : React.FC = () => {
                 <h1 className="text-5xl font-bold">{headline}</h1>
                 <button
                     className="mt-7"
-                    onClick={() => navigate('/order')}
+                    // onClick={() => navigate('/order')}
+                    onClick={() => navigate('/contact')}
                     style={{backgroundColor: primary}}>{ctaText}</button>
             </div>
         </section>

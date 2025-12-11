@@ -5,12 +5,15 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import AppRoutes from 'utils/AppRoutes'
 import CartProvider from './contexts/CartProvider'
+import { APIProvider } from '@vis.gl/react-google-maps'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <CartProvider>
-        <AppRoutes />
+        <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+          <AppRoutes />
+        </APIProvider>
       </CartProvider>
     </BrowserRouter>
   </StrictMode>,
