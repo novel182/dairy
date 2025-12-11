@@ -1,6 +1,10 @@
-const Footer : React.FC = () => {
+import type { FooterProps } from "types"
+
+const Footer : React.FC<FooterProps> = ({className}) => {
+    const sectionClass = "py-20 items-center " + className
+
     return (
-        <section className="my-20 items-center">
+        <section className={sectionClass}>
             <div className="m-auto flex justify-between w-[60%]">
                 <div className="text-left">
                     <h2 className="text-3xl mb-4 font-bold">Alpine Dairy</h2>
