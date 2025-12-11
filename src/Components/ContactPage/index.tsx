@@ -3,7 +3,6 @@ import Footer from "../Footer"
 import ContactCard from "./ContactCard"
 import { light } from "utils/colors"
 
-
 const ContactPage = () => {
     return (
         <div className="w-screen">
