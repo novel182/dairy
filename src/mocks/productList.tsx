@@ -25,7 +25,7 @@ const milk : BaseItem = {
 }
 
 const mozerellaCheese : BaseItem = {
-    product: "Mozzarella cheese",
+    product: "Mozzarella",
     desc: "Soft and mild mozzarella cheese, perfect for melting",
     price: 6.49,
     unit: "lb",
