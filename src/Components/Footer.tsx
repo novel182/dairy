@@ -12,7 +12,7 @@ const Footer : React.FC<FooterProps> = ({className}) => {
                     <img className="inline" src="twitterIcon.png" width="20"/>
                 </div>
                 <div className="text-right">
-                    <h2 className="text-lg font-semibold">Contact Us</h2>
+                    <h2 className="text-lg font-semibold">Contact</h2>
                     <p>Address</p>
                     <img className="inline mr-2" src="phone.png" width="20"/>
                     <p className="inline">98-550-56567</p>

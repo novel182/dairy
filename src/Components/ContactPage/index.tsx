@@ -12,7 +12,7 @@ const ContactPage = () => {
                     <h1>Place an Order</h1>
                     <p>We are curently only taking orders through visits or phone calls</p>
                 </div>
-                <div className="flex justify-center items-center p-20" style={{backgroundColor: light}}>
+                <div className="flex justify-center items-center p-6 md:p-20" style={{backgroundColor: light}}>
                     <ContactCard />
                 </div>
                 <div/>
