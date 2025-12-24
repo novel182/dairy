@@ -5,7 +5,7 @@ const Footer : React.FC<FooterProps> = ({className}) => {
 
     return (
         <section className={sectionClass}>
-            <div className="m-auto flex justify-between w-[60%]">
+            <div className="m-auto flex justify-between md:w-[60%] w-[80%]">
                 <div className="text-left">
                     <h2 className="text-3xl mb-4 font-bold">Alpine Dairy</h2>
                     <img className="mr-3 inline" src="fbIcon.png" width="20"/>
@@ -18,7 +18,7 @@ const Footer : React.FC<FooterProps> = ({className}) => {
                     <p className="inline">98-550-56567</p>
                 </div>
             </div>
-            <div className="border-t border-slate-200 text-gray-400 mt-10 pt-5 text-center w-[50%] m-auto">
+            <div className="border-t border-slate-200 text-gray-400 mt-10 pt-5 text-center w-[80%] md:w-[50%] m-auto">
                 <p>
                 © 2023 Alpine Dairy. All rights reserved. | Privacy Policy | Terms of Service
                 </p>

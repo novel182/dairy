@@ -50,7 +50,7 @@ const CartContainer : React.FC<SummaryProps> = ({collection}) => {
     const showSummary = collection && collection.length > 0
 
     return (
-        <div className="w-full lg:col-span-1 md:col-span-2">
+        <div className="w-full lg:col-span-1 col-span-2">
             <div className="bg-[#FFFDFF] rounded-xl shadow-sm border border-gray-200 p-6 mt-10">
                 <div className="flex items-center justify-center">
                     <img src="cartIcon.png" className="my-3" width="30"/>

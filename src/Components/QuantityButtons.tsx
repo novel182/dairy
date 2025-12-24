@@ -19,7 +19,7 @@ const QuantityButtons : React.FC<QuantityButtonsProps> = ({cartButton, id}) => {
     const [quantity, setQuantity] = useState(0)
 
     const CartQuantity = itemSummary?.quantity || 0
-    const buttonText = CartQuantity === 0 ? "Add order" : "Update"
+    const buttonText = CartQuantity === 0 ? "Add" : "Update"
 
     useEffect(() => {
         if(itemSummary) setQuantity(itemSummary.quantity)
