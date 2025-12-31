@@ -4,7 +4,7 @@ const butter : BaseItem = {
     product: "Butter",
     desc: "Freshly churned butter made from high-quality cream",
     price: 4.99,
-    unit: "cup",
+    unit: "kg",
     id: "butter"
 }
 
@@ -12,7 +12,7 @@ const paneer : BaseItem = {
     product: "Paneer",
     desc: "Soft and crumbly cheese, perfect for cooking",
     price: 5.99,
-    unit: "lb",
+    unit: "kg",
     id: "paneer"
 }
 
@@ -20,16 +20,16 @@ const milk : BaseItem = {
     product: "Whole milk",
     desc: "Rich and creamy whole milk from grass-fed cows",
     price: 3.49,
-    unit: "gallon",
+    unit: "litre",
     id: "milk"
 }
 
-const mozerellaCheese : BaseItem = {
+const mozarellaCheese : BaseItem = {
     product: "Mozzarella",
     desc: "Soft and mild mozzarella cheese, perfect for melting",
     price: 6.49,
-    unit: "lb",
-    id: "cheese"
+    unit: "kg",
+    id: "mozzarella"
 }
 
 const ghee : BaseItem = {
@@ -40,14 +40,14 @@ const ghee : BaseItem = {
     id: "ghee"
 }
 
-const yogurt : BaseItem = {
-    product: "Yogurt",
-    desc: "Creamy and tangy yogurt, great for breakfast or snacks",
-    price: 2.99,
-    unit: "cup",
-    id: "yogurt"
+const kanchan : BaseItem = {
+    product: "Kanchan",
+    desc: "Aged nepali cheese with a sharp and tangy taste",
+    price: 7.99,
+    unit: "kg",
+    id: "kanchan"
 }
 
-const productList : BaseItem[] = [butter, paneer, milk, mozerellaCheese, ghee, yogurt]
+const productList : BaseItem[] = [butter, paneer, milk, mozarellaCheese, ghee, kanchan]
 
 export default productList
