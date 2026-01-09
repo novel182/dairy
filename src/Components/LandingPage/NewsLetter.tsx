@@ -15,7 +15,7 @@ const NewsLetter : React.FC = () => {
                 <input 
                     id="email"
                     autoComplete="off"
-                    className="bg-white border border-white focus:border-[0] focus:outline-0 p-3 rounded-lg m-4 min-w-[400px] h-[35px] text-gray-600"
+                    className="bg-white border border-white focus:border-[0] focus:outline-0 p-3 rounded-lg m-4 lg:min-w-[400px] h-[35px] text-gray-600"
                     type="text"
                     placeholder="Enter your email address"
                     onChange={(event) => inputBoxValue = event.target.value}/>
