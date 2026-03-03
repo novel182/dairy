@@ -21,7 +21,7 @@ const NewsLetter : React.FC = () => {
                     onChange={(event) => inputBoxValue = event.target.value}/>
                 <button
                     onClick={submitOnClick}
-                    className="h-[37px] text-white flex items-center"
+                    className="h-[37px] text-white flex items-center mr-4"
                     style={{backgroundColor: primary}}>
                     Subscribe
                 </button>

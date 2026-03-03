@@ -1,6 +1,10 @@
-const Footer : React.FC = () => {
+import type { FooterProps } from "types"
+
+const Footer : React.FC<FooterProps> = ({className}) => {
+    const sectionClass = "py-20 items-center " + className
+
     return (
-        <section className="my-20 items-center">
+        <section className={sectionClass}>
             <div className="m-auto flex justify-between md:w-[60%] w-[80%]">
                 <div className="text-left">
                     <h2 className="text-2xl lg:text-3xl mb-4 font-bold">Alpine Dairy</h2>
@@ -8,7 +12,7 @@ const Footer : React.FC = () => {
                     <img className="inline" src="twitterIcon.png" width="20"/>
                 </div>
                 <div className="text-right">
-                    <h2 className="text-lg font-semibold">Contact Us</h2>
+                    <h2 className="text-lg font-semibold">Contact</h2>
                     <p>Address</p>
                     <img className="mr-2 hidden lg:inline" src="phone.png" width="20"/>
                     <p className="inline">98550-56567</p>

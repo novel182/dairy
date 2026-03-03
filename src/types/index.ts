@@ -30,6 +30,10 @@ export interface HeaderProps {
     backText: string
 }
 
+export interface FooterProps {
+    className?: string
+}
+
 export interface PaymentInput {
     card: number,
     expMonth: number,
